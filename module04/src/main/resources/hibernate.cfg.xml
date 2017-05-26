@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--  Database connection settings  -->
+
+
+        <!--HSQL Properties-->
+       <!-- <property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
+        <property name="connection.url">jdbc:hsqldb:./database/db04;shutdown=true</property>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"/>-->
+
+
+        <!--H2 Properties-->
+        <!--<property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:file:./db/db04</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"/>-->
+
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost/HibernateTutorial</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">147258369</property>
+
+
+
+
+        <!--  Echo all executed SQL to stdout  -->
+        <property name="show_sql">true</property>
+
+        <!--  Drop and re-create the database schema on startup  -->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <mapping class="com.vural.Book"/>
+        <mapping class="com.vural.Library"/>
+        <mapping class="com.vural.Team"/>
+        <mapping class="com.vural.Player"/>
+        <mapping class="com.vural.Author"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
